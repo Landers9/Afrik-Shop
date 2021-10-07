@@ -8,9 +8,10 @@
 
 ## technology used
 ***
-- devise for users 
-- favorite function to add products to favorite
-- Templates : Bootstrap and many librarie of javascript
+- devise for users (internal to the program)
+- favorite function to add products to favorite (internal to the program)
+- Templates : Bootstrap (internal to the program)
+- JavaScript Librairie as jquery, AOS, Anime.js (external to the program)
 
 ## Execution procedure
 ***
