@@ -24,11 +24,11 @@
 
 ## Catalog Design 
 ***
-<https://docs.google.com/spreadsheets/d/1JfDhc1_q5aR2THoCXeiKH5HB-msSJAOjaZEynJcPepc/edit?usp=sharing>
+<https://docs.google.com/spreadsheets/d/e/2PACX-1vRrCOZy6C98AKF4n0LxleBCzRKLsX9qqDIZeCbyAVj06ANcNNbYIjHYvh-oc4VMsH84IPWtYVGTI6dC/pubhtml?gid=1804989209&single=true>
 
 ## Table definition document
 ***
-<https://docs.google.com/spreadsheets/d/1JfDhc1_q5aR2THoCXeiKH5HB-msSJAOjaZEynJcPepc/edit?usp=sharing>
+<https://docs.google.com/spreadsheets/d/e/2PACX-1vRrCOZy6C98AKF4n0LxleBCzRKLsX9qqDIZeCbyAVj06ANcNNbYIjHYvh-oc4VMsH84IPWtYVGTI6dC/pubhtml?gid=1090603487&single=true>
 
 ## ER Diagram
 ***
