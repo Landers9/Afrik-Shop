@@ -1,5 +1,7 @@
 {
   "name": "Afrik-Shop",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
 }

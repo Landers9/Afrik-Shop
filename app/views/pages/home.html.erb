@@ -1,0 +1,38 @@
+<section id="banner">
+    <div class="banner-text">
+      <h1>Welcome to AfrikShop</h1>
+      <p>The best of Africa in one store</p>
+      <div class="banner-btn">
+        <a href="#"><span></span>Admin</a>
+        <a href="#"><span></span>Read More</a>
+      </div>
+    </div>
+</section>
+
+<div id="sideNav">
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Dashbord Admin</a></li>
+      <li><a href="#">Go to market</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div id="menuBtn">
+  <i class='bx bx-menu bx-md'></i>
+</div>
+
+<script type="text/javascript">
+  var sideNav = document.getElementById('sideNav');
+
+  $("#menuBtn").click(function(){
+    if(sideNav.style.right == "-250px"){
+      sideNav.style.right = "0";
+    }
+    else{
+      sideNav.style.right = "-250px";
+    }
+  });
+</script>
