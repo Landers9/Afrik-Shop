@@ -6,11 +6,14 @@
 - Ruby 2.6.5
 - Rails 5.2.5
 
-## technology used
+## technology used (internal to the program)
 ***
-- devise for users (internal to the program)
-- favorite function to add products to favorite (internal to the program)
-- Templates : Bootstrap (internal to the program)
+- devise for users 
+- favorite function to add products to favorite
+- Bootstrap, Ajax
+
+## technology used (exteral to the program)
+***
 - JavaScript Librairie as jquery, AOS, Anime.js (external to the program)
 
 ## Execution procedure
