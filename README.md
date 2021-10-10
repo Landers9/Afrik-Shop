@@ -26,6 +26,10 @@
 > $ rails db:seed  
 > $ rails s  
 
+## Fiche de control
+***
+<https://docs.google.com/spreadsheets/d/e/2PACX-1vRrCOZy6C98AKF4n0LxleBCzRKLsX9qqDIZeCbyAVj06ANcNNbYIjHYvh-oc4VMsH84IPWtYVGTI6dC/pubhtml>
+
 ## Catalog Design 
 ***
 <https://docs.google.com/spreadsheets/d/e/2PACX-1vRrCOZy6C98AKF4n0LxleBCzRKLsX9qqDIZeCbyAVj06ANcNNbYIjHYvh-oc4VMsH84IPWtYVGTI6dC/pubhtml?gid=1804989209&single=true>
