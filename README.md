@@ -10,7 +10,7 @@
 ***
 - devise for users 
 - favorite function to add products to favorite
-- Bootstrap, Ajax
+- Bootstrap, Ajax (to comment on products without reloading the page)
 
 ## technology used (exteral to the program)
 ***
