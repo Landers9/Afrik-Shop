@@ -10,7 +10,7 @@
 ***
 - devise for users 
 - favorite function to add products to favorite
-- Bootstrap, Ajax
+- Bootstrap, Ajax (to comment on products without reloading the page)
 
 ## technology used (exteral to the program)
 ***
@@ -25,6 +25,10 @@
 > $ rails db:migrate  
 > $ rails db:seed  
 > $ rails s  
+
+## Fiche de control
+***
+<https://docs.google.com/spreadsheets/d/e/2PACX-1vRrCOZy6C98AKF4n0LxleBCzRKLsX9qqDIZeCbyAVj06ANcNNbYIjHYvh-oc4VMsH84IPWtYVGTI6dC/pubhtml>
 
 ## Catalog Design 
 ***
