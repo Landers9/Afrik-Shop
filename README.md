@@ -51,7 +51,7 @@
 ***
 <https://drive.google.com/file/d/1-Aw2q2abC9jRHXDq_bMvkLuPrfcAc1K9/view?usp=sharing>
 
-![Tansition diagram](/trans.png "Tansition diagram")
+![Tansition diagram](/transition.png "Tansition diagram")
 
 
 ## Wireframe
