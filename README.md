@@ -45,7 +45,7 @@
 ***
 <https://cacoo.com/diagrams/vFGDDe7Xp3VrehR2/90A82>
 
-![DIAGRAM ER](/ertables.png "Diagram ER")
+![DIAGRAM ER](/er.png "Diagram ER")
 
 
 ## Screen Transition Diagram
