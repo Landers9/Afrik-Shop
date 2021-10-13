@@ -17,6 +17,7 @@
 ## technology used (exteral to the program)
 ***
 - JavaScript Librairie as jquery, AOS, Anime.js (external to the program)
+(For anime.js and AOS I will use them for the animations on my different pages to make the user experience more enjoyable)
 
 ## Execution procedure
 ***
