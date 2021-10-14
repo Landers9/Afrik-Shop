@@ -9,7 +9,6 @@
 ## technology used (internal to the program)
 ***
 - devise for manage users table (sign up, login, remember password..)
-- Ajax (for comment products without reloading the page
 - AWS EC2 used to deploy the application in production
 - Bootstrap to design the appplication
 - gem rails_admin and gem cancancan for manage the Dashbord of admin and to limite the access of users not authorized
@@ -45,7 +44,7 @@
 ***
 <https://cacoo.com/diagrams/vFGDDe7Xp3VrehR2/90A82>
 
-![DIAGRAM ER](/er.png "Diagram ER")
+![DIAGRAM ER](/erdiagram.png "Diagram ER")
 
 
 ## Screen Transition Diagram
