@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Favories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @favories.each do |favory| %>
+      <tr>
+        <td><%= favory.product %></td>
+        <td><%= link_to 'Show', favory %></td>
+        <td><%= link_to 'Edit', edit_favory_path(favory) %></td>
+        <td><%= link_to 'Destroy', favory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Favory', new_favory_path %>
