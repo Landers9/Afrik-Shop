@@ -1,34 +1,143 @@
-<p id="notice"><%= notice %></p>
+<section id="banner-shop">
+   <div class="banner-text">
+     <h1>It's Shopping Time</h1>
+     <p>Let's go !</p>
+     <div class="banner-btn">
+       <a href="#products"><span></span>Explore</a>
+     </div>
+   </div>
+</section>
 
-<h1>Products</h1>
+<!-- my favories products -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th>Price</th>
-      <th>References</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="favories">
+  <div class="small-container">
+    <h2 class="title">Favorites Products</h2>
+    <div class="row">
+      <% Favory.all.each do |f| %>
+        <div class="col-3">
+          <img src="<%= f.product.image.url %>" alt="">
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= image_tag product.image.url, class: "rounded-circle", width: "45"%></td>
-        <td><%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<!-- all products -->
+
+<div class="small-container">
+  <h2 class="title" id="products">All products</h2>
+  <div class="row">
+    <% @products.each do |p| %>
+      <div class="col-4">
+        <a href="<%= product_path(p) %>">
+          <img src="<%= p.image.url %>" alt="">
+        </a>
+        <h4><%= p.name %></h4>
+        <div class="rating">
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bx-star' ></i>
+        </div>
+        <p>$ <%= p.price %> </p>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <h2 class="title">Latest products</h2>
+</div>
 
-<br>
+<div class="new-offer">
+  <div class="small-container">
+    <div class="row">
+      <div class="col-2">
+        <img src="/assets/exclusive.png" alt="" class="offer-img">
+      </div>
+      <div class="col-2 offer-banner-text">
+        <h1>Exclusive Available on Redstore</h1>
+        <p>Smart Brand 4</p>
+        <a href="#" class="buy">Buy Now</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'New Product', new_product_path %>
+<!-- testimonial -->
+
+<div class="testimonial">
+  <div class="small-container">
+    <div class="row">
+      <div class="col-3">
+        <i class='bx bxs-quote-right'></i>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        <div class="rating">
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bx-star' ></i>
+        </div>
+        <img src="/assets/user-1.png" alt="">
+        <h3>Marina Grants</h3>
+      </div>
+      <div class="col-3">
+        <i class='bx bxs-quote-right'></i>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        <div class="rating">
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bx-star' ></i>
+        </div>
+        <img src="/assets/user-2.png" alt="">
+        <h3>Victoria Serb </h3>
+      </div>
+      <div class="col-3">
+        <i class='bx bxs-quote-right'></i>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        <div class="rating">
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bx-star' ></i>
+        </div>
+        <img src="/assets/user-3.png" alt="">
+        <h3>Paul Peter </h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="footer">
+  <img src="/assets/benin.jpg" alt="" class="footer-img">
+  <div class="title-text">
+    <p>Contact</p>
+    <h1>Visit Shop Today</h1>
+  </div>
+  <div class="footer-row">
+    <div class="footer-left">
+      <h2>Opening Hours</h2>
+      <p><i class='bx bx-time-five'></i>Monday to Friday - 24H/24H</p>
+      <p><i class='bx bx-time-five'></i>Saturday and Sunday - 7am to 3pm</p>
+    </div>
+    <div class="footer-right">
+      <h1>Get In Touch</h1>
+      <p>Benin, Cotonou / Abomey-Calavi<i class='bx bx-map-pin'></i></p>
+      <p>afrikshop@website.com <i class='bx bxl-google-plus'></i></p>
+      <p>+229 00272552 <i class='bx bx-phone'></i></p>
+    </div>
+  </div>
+
+  <div class="social-links">
+    <i class='bx bxl-facebook'></i>
+    <i class='bx bxl-instagram'></i>
+    <i class='bx bxl-twitter'></i>
+    <i class='bx bxl-youtube'></i>
+
+    <p>Copyright Franck AÏGBA | @dive in code</p>
+  </div>
+
+</section>

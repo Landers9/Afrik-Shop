@@ -17,9 +17,43 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
+
     <%= yield %>
+
+    <div id="sideNav">
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/admin">Dashbord Admin</a></li>
+          <li><a href="#">Go to shop</a></li>
+          <li><a href="#service">Our products</a></li>
+          <li><a href="#footer">Contact</a></li>
+          <% if user_signed_in? %>
+            <li><%= button_to "Déconnexion", destroy_user_session_path, method: :delete, class:"btn-logout"%></li>
+          <% else %>
+            <li><%= link_to "Nouvelle inscription", new_user_registration_path %></li>
+            <li><%= link_to "Se connecter", new_user_session_path %>
+          <% end %></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="menuBtn">
+      <i class='bx bx-menu bx-md'></i>
+    </div>
+
+    <script type="text/javascript">
+      var sideNav = document.getElementById('sideNav');
+
+      $("#menuBtn").click(function(){
+        if(sideNav.style.right == "-250px"){
+          sideNav.style.right = "0";
+        }
+        else{
+          sideNav.style.right = "-250px";
+        }
+      });
+    </script>
+
   </body>
 </html>

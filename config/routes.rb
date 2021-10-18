@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users
   resources :notes
   resources :orders
   resources :carts
   resources :favories
   resources :products
-  devise_for :users
   resources :categories
   root to: "pages#home"
 

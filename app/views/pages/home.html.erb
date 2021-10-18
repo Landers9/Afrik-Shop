@@ -1,29 +1,13 @@
- <section id="banner">
-    <div class="banner-text">
-      <h1>Welcome to AfrikShop</h1>
-      <p>The best of Africa in one store</p>
-      <div class="banner-btn">
-        <a href="/admin"><span></span>Admin</a>
-        <a href="#"><span></span>Go to Shop</a>
-      </div>
+<section id="banner">
+  <div class="banner-text">
+    <h1>Welcome to AfrikShop</h1>
+    <p>The best of Africa in one store</p>
+    <div class="banner-btn">
+      <a href="/admin"><span></span>Admin</a>
+      <a href="<%= products_path %>"><span></span>Go to Shop</a>
     </div>
+  </div>
 </section>
-
-<div id="sideNav">
-  <nav>
-    <ul>
-      <li><a href="#feature">Home</a></li>
-      <li><a href="#">Dashbord Admin</a></li>
-      <li><a href="#">Go to shop</a></li>
-      <li><a href="#service">Our products</a></li>
-      <li><a href="#footer">Contact</a></li>
-    </ul>
-  </nav>
-</div>
-
-<div id="menuBtn">
-  <i class='bx bx-menu bx-md'></i>
-</div>
 
 <section id="feature">
   <div class="title-text">
@@ -115,36 +99,6 @@
   </div>
 </section>
 
-<h1>Products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th>Price</th>
-      <th>References</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= image_tag product.image.url, class: "rounded-circle", width: "45"%></td>
-        <td><%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
 <section id="footer">
   <img src="/assets/benin.jpg" alt="" class="footer-img">
   <div class="title-text">
@@ -175,34 +129,3 @@
   </div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-  var sideNav = document.getElementById('sideNav');
-
-  $("#menuBtn").click(function(){
-    if(sideNav.style.right == "-250px"){
-      sideNav.style.right = "0";
-    }
-    else{
-      sideNav.style.right = "-250px";
-    }
-  });
-</script>
