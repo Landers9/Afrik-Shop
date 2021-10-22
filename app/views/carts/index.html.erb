@@ -1,33 +1,95 @@
-<p id="notice"><%= notice %></p>
+<!------Carts page-------->
+<div class="small-container cart-page">
+    <h2 class="title">Cart</h2>
+   <table>
+     <tr>
+       <th>Product</th>
+       <th>Quantity</th>
+       <th>Subtotal</th>
+     </tr>
+     <% @carts.each do |c| %>
+       <tr>
+         <td>
+           <div class="cart-info">
+             <img src="<%= c.product.image.url %>" alt="">
+             <div>
+               <p><%= c.product.name %></p>
+               <small>Price: <%= c.product.price %></small>
+               <br>
+               <%= link_to "Remove", delete_cart_path(id: c.product.id), method: :delete%>
+             </div>
+           </div>
+         </td>
+         <td>
+          <%= form_for(c) do |f| %>
+            <div class="field">
+              <%= f.number_field :quantity, class:"quantity", in: 1..20, step: 1%>
+            </div>
 
-<h1>Carts</h1>
+            <div class="field">
+              <%= hidden_field_tag "id", c.product.id  %>
+            </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Sum price</th>
-      <th>Number product</th>
-      <th>Product</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+            <div class="actions">
+              <%= f.submit "Update", class:"btn-update" %>
+            </div>
+          <% end %>
+         </td>
+         <td>
+           <%= c.total_price %>
+         </td>
+       </tr>
+     <% end %>
+   </table>
 
-  <tbody>
-    <% @carts.each do |cart| %>
-      <tr>
-        <td><%= cart.sum_price %></td>
-        <td><%= cart.number_product %></td>
-        <td><%= cart.product %></td>
-        <td><%= cart.user %></td>
-        <td><%= link_to 'Show', cart %></td>
-        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+   <div class="total-price">
+     <table>
+       <tr>
+         <td>Subtotal</td>
+         <td><%= @subtotal %>$</td>
+       </tr>
+       <tr>
+         <td>Tax</td>
+         <td><%= @tax %>$</td>
+       </tr>
+       <tr>
+         <td>Total</td>
+         <td><%= @total %>$</td>
+       </tr>
+     </table>
+   </div>
 
-<br>
+   <a href="<%= add_order_path %>", class="btn-update valid">Validate</a>
 
-<%= link_to 'New Cart', new_cart_path %>
+</div>
+
+<section id="footer" style="background:#eee;">
+  <img src="/assets/benin.jpg" alt="" class="footer-img">
+  <div class="title-text">
+    <p>Contact</p>
+    <h1>Visit Shop Today</h1>
+  </div>
+  <div class="footer-row">
+    <div class="footer-left">
+      <h2>Opening Hours</h2>
+      <p><i class='bx bx-time-five'></i>Monday to Friday - 24H/24H</p>
+      <p><i class='bx bx-time-five'></i>Saturday and Sunday - 7am to 3pm</p>
+    </div>
+    <div class="footer-right">
+      <h1>Get In Touch</h1>
+      <p>Benin, Cotonou / Abomey-Calavi<i class='bx bx-map-pin'></i></p>
+      <p>afrikshop@website.com <i class='bx bxl-google-plus'></i></p>
+      <p>+229 00272552 <i class='bx bx-phone'></i></p>
+    </div>
+  </div>
+
+  <div class="social-links">
+    <i class='bx bxl-facebook'></i>
+    <i class='bx bxl-instagram'></i>
+    <i class='bx bxl-twitter'></i>
+    <i class='bx bxl-youtube'></i>
+
+    <p>Copyright Franck AÏGBA | @dive in code</p>
+  </div>
+
+</section>

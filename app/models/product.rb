@@ -6,6 +6,8 @@ class Product < ApplicationRecord
 
   has_many :carts, dependent: :destroy
 
+  # has_many :cart_users, through: :carts, source: :user
+
   has_and_belongs_to_many :orders, dependent: :destroy
 
   validates :name, :description, :price, :image, presence: true

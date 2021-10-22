@@ -9,7 +9,7 @@
 
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script|Tangerine|Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script|Tangerine|Cookie|Material+Icons">
 
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -25,12 +25,15 @@
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/admin">Dashbord Admin</a></li>
-          <li><a href="#">Go to shop</a></li>
-          <li><a href="#service">Our products</a></li>
+          <li><a href="<%= products_path %>">Go to shop</a></li>
           <li><a href="#footer">Contact</a></li>
           <% if user_signed_in? %>
-            <li><%= button_to "Déconnexion", destroy_user_session_path, method: :delete, class:"btn-logout"%></li>
+            <% if current_user.carts.count != 0 %>
+              <li><a href="<%= carts_path %>">Cart [<%= current_user.carts.count %>] </a></li>
+            <%end%>
+            <li><%= button_to "Déconnexion", destroy_user_session_path, method: :delete, class:"btn-logout"%></li
           <% else %>
+            <li><a href="#service">Our products</a></li>
             <li><%= link_to "Nouvelle inscription", new_user_registration_path %></li>
             <li><%= link_to "Se connecter", new_user_session_path %>
           <% end %></li>

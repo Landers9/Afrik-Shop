@@ -1,33 +1,79 @@
-<p id="notice"><%= notice %></p>
+<div class="small-container cart-page">
+    <h2 class="title">Ckeckout / Orders</h2>
 
-<h1>Orders</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Total price</th>
-      <th>Qt product</th>
-      <th>Product</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
+    <table>
       <tr>
-        <td><%= order.total_price %></td>
-        <td><%= order.qt_product %></td>
-        <td><%= order.product %></td>
-        <td><%= order.user %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>id</th>
+        <th>Username</th>
+        <th>Telephone</th>
+        <th>Address</th>
+        <th>Quantity of products</th>
+        <th>Total price</th>
+        <th>Status</th>
+        <th>Action</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% @orders.each do |o| %>
+        <tr>
+          <td>
+            <%= o.id %>
+          </td>
+          <td>
+            <%= o.user.username %>
+          </td>
+          <td>
+            <%= o.user.telephone %>
+          </td>
+          <td>
+            <%= o.user.address %>
+          </td>
+          <td>
+            <%= o.qt_product %>
+          </td>
+          <td>
+            <%= o.total_price %>
+          </td>
+          <td>
+            <% if o.status == "progress" %>
+              <p style="color:#FAC800"><%= o.status %></p>
+            <%else%>
+              <p style="color:#00FA00"><%= o.status %></p>
+            <%end%>
+          </td>
+          <td>
+            <%= link_to "Delete", delete_order_path(id: o.id), method: :delete%>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+</div>
 
-<br>
+<section id="footer" style="background:#eee;">
+  <img src="/assets/benin.jpg" alt="" class="footer-img">
+  <div class="title-text">
+    <p>Contact</p>
+    <h1>Visit Shop Today</h1>
+  </div>
+  <div class="footer-row">
+    <div class="footer-left">
+      <h2>Opening Hours</h2>
+      <p><i class='bx bx-time-five'></i>Monday to Friday - 24H/24H</p>
+      <p><i class='bx bx-time-five'></i>Saturday and Sunday - 7am to 3pm</p>
+    </div>
+    <div class="footer-right">
+      <h1>Get In Touch</h1>
+      <p>Benin, Cotonou / Abomey-Calavi<i class='bx bx-map-pin'></i></p>
+      <p>afrikshop@website.com <i class='bx bxl-google-plus'></i></p>
+      <p>+229 00272552 <i class='bx bx-phone'></i></p>
+    </div>
+  </div>
 
-<%= link_to 'New Order', new_order_path %>
+  <div class="social-links">
+    <i class='bx bxl-facebook'></i>
+    <i class='bx bxl-instagram'></i>
+    <i class='bx bxl-twitter'></i>
+    <i class='bx bxl-youtube'></i>
+
+    <p>Copyright Franck AÏGBA | @dive in code</p>
+  </div>
+
+</section>

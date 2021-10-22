@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 
   # GET /orders or /orders.json
   def index
-    @orders = Order.all
+    @orders = current_user.orders.all
   end
 
   # GET /orders/1 or /orders/1.json
@@ -21,17 +21,29 @@ class OrdersController < ApplicationController
 
   # POST /orders or /orders.json
   def create
-    @order = Order.new(order_params)
-
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: "Order was successfully created." }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+    commands = current_user.carts.all
+    @order = Order.new()
+    @total = 20
+    @qtproduct = 0
+    commands.each do |c|
+      @total = @total + c.total_price
+      @qtproduct = @qtproduct + c.quantity
     end
+    @order.total_price = @total
+    @order.qt_product = @qtproduct
+    @order.user_id = current_user.id
+    @order.save
+
+    commands.each do |c|
+      @cmde = OrdersProduct.new()
+      @cmde.order_id = @order.id
+      @cmde.product_id = c.product.id
+      @cmde.save
+    end
+
+    d = commands.delete_all
+
+    redirect_to orders_path
   end
 
   # PATCH/PUT /orders/1 or /orders/1.json
@@ -49,11 +61,8 @@ class OrdersController < ApplicationController
 
   # DELETE /orders/1 or /orders/1.json
   def destroy
-    @order.destroy
-    respond_to do |format|
-      format.html { redirect_to orders_url, notice: "Order was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    order = current_user.orders.find_by(user_id: current_user.id, id: params[:id]).destroy
+    redirect_to orders_path()
   end
 
   private

@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
 
-  validates :total_price, :qt_product, :status, presence: true
+  validates :total_price, :qt_product, presence: true
 
   has_and_belongs_to_many :products, optional: true
 

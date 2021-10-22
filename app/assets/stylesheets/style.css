@@ -393,6 +393,10 @@ hr{
     flex-basis: 100%;
     font-size: 14px;
   }
+
+  .cart-info p{
+    display: none;
+  }
 }
 
 /* css login page */
@@ -424,7 +428,13 @@ hr{
 
 .col-2 img{
   max-width: 100%;
-  padding: 54px 0;
+  padding: 50px 0;
+}
+
+.col-2 h1{
+  font-size: 50px;
+  line-height: 60px;
+  margin: 25px 0;
 }
 
 .form-container{
@@ -476,6 +486,7 @@ form .checkbox{
 
 form .checkbox .case{
   margin:25px 5px;
+
 }
 
 form .btn{
@@ -631,11 +642,13 @@ h4{
 .testimonial{
   padding: 100px 0px;
   background-color: #eee;
+  font-family: "Montserrat";
 }
 
-.testimonial .col-3{
+.cart{
+  flex-basis: 28%;
+  padding: 40px 15px;
   text-align: center;
-  padding: 40px 30px;
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.5s;
@@ -657,13 +670,189 @@ h4{
 }
 
 .testimonial .col-3 p{
-  font-size: 14px;
+  font-size: 20px;
   margin: 12px 0;
-  color: #777;
+  color: #555;
+  font-family: "Cookie";
+
 }
 
 .testimonial .col-3 h3{
   font-weight: 600;
   color: #555;
   font-size: 16px;
+}
+
+/* page show details of product */
+
+.product-details{
+  margin:100px;
+  display: flex;
+  justify-content:center;
+  flex-wrap:nowrap;
+}
+
+.image-details{
+  /* width: 50%; */
+}
+
+.text-details{
+  /* width: 50%; */
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap:30px;
+}
+
+.text-details .product-description{
+  justify-content: center;
+  text-align: left;
+  font-size: 20px;
+  color: #555;
+}
+
+.text-details h4{
+  font-weight: bold;
+}
+.product-title{
+  font-family: 'Kaushan Script';
+  font-size: 45px;
+}
+
+.quantity{
+  width: 40px;
+  height: 20px;
+  border: 1px solid purple;
+  outline:none;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.quantity:focus{
+  outline:none;
+}
+
+.button{
+  width: 100px;
+  background: purple;
+  border-radius: 25px;
+  padding: 15px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 15px;
+  box-shadow: 0 9px rgb(255, 255, 255);
+  font-weight: 800;
+}
+
+.btn-cart{
+  margin: 20px -12px;
+}
+
+.product-price{
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+}
+
+.others{
+  background-color: #eee;
+}
+
+@media screen and (max-width: 1000px){
+  .product-details{
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .image-details{
+    width: 100%;
+  }
+
+  .text-details{
+    width: 100%;
+  }
+}
+
+/* cart page */
+
+.cart-page{
+  margin: 80px auto;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-info{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+th{
+  text-align: left;
+  padding: 10px;
+  color: #fff;
+  background: purple;
+  font-weight: bold;
+}
+
+td{
+  padding: 10px 5px;
+}
+
+td input{
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+}
+
+td a{
+  color: #ee1122;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+td img{
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.total-price{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.total-price table{
+  border-top: 3px solid purple;
+  width: 100%;
+  max-width: 440px;
+}
+
+td:last-child{
+  text-align: right;
+}
+
+th:last-child{
+  text-align: right;
+}
+
+.btn-update{
+  width: 110px;
+  height: 31px;
+  padding-bottom: 10px;
+  align-items: center;
+  background-color: purple;
+  text-decoration:none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  border: none;
+}
+
+.valid{
+  padding:10px;
+  background:#4B3799;
 }

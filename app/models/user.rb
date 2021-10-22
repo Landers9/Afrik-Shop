@@ -7,5 +7,7 @@ class User < ApplicationRecord
   validates :username, :address, :email, :encrypted_password, :telephone, presence: true
 
   has_many :carts, dependent: :destroy
+  # has_many :cart_products, through: :carts, source: :product
   has_many :orders, dependent: :destroy
+
 end
