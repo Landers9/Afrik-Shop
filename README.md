@@ -17,6 +17,7 @@
 ***
 - JavaScript Librairie as jquery (external to the program)
 (I will use them for the animations on my different pages to make the user experience more enjoyable)
+- cloudinary for storage my medias which are used in my app
 
 ## Execution procedure
 ***

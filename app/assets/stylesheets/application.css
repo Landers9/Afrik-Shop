@@ -694,8 +694,9 @@ h4{
   flex-wrap:nowrap;
 }
 
-.image-details{
-  /* width: 50%; */
+.image-details img{
+  width: 250px;
+  height: 300px;
 }
 
 .text-details{
