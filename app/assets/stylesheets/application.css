@@ -8,7 +8,8 @@ html{
 }
 
 #banner{
-  background: linear-gradient(rgba(0, 0, 0, 0.3), purple), url('/assets/bg.jpg');
+  /* background: linear-gradient(rgba(0, 0, 0, 0.3), purple), url('/assets/bg.jpg'); */
+  background: linear-gradient(rgba(0, 0, 0, 0.3), purple), url('bg.jpg');
   background-size: cover;
   height: 100vh;
 }
