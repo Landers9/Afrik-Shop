@@ -24,19 +24,22 @@
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/admin">Dashbord Admin</a></li>
           <li><a href="<%= products_path %>">Go to shop</a></li>
           <li><a href="#footer">Contact</a></li>
           <% if user_signed_in? %>
+            <% if current_user.admin? %>
+              <li><a href="/admin">Dashbord Admin</a></li>
+            <% end %>
             <% if current_user.carts.count != 0 %>
               <li><a href="<%= carts_path %>">Cart [<%= current_user.carts.count %>] </a></li>
             <%end%>
+            <li><a href="<%= orders_path %>">Orders</a></li>
             <li><%= button_to "Déconnexion", destroy_user_session_path, method: :delete, class:"btn-logout"%></li
           <% else %>
             <li><a href="#service">Our products</a></li>
-            <li><%= link_to "Nouvelle inscription", new_user_registration_path %></li>
-            <li><%= link_to "Se connecter", new_user_session_path %>
-          <% end %></li>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
         </ul>
       </nav>
     </div>

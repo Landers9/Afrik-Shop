@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
+    @favories = current_user.favories.all
     @products = Product.all.order(id: :asc)
   end
 

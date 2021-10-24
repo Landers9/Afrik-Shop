@@ -3,8 +3,15 @@
     <h1>Welcome to AfrikShop</h1>
     <p>The best of Africa in one store</p>
     <div class="banner-btn">
-      <a href="/admin"><span></span>Admin</a>
-      <a href="<%= products_path %>"><span></span>Go to Shop</a>
+      <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <a href="/admin"><span></span>Admin</a>
+        <% end %>
+        <a href="<%= products_path %>"><span></span>Go to Shop</a>
+      <% else %>
+          <a href="<%= new_user_registration_path %>"><span></span>Sign up</a>
+          <a href="<%= new_user_session_path %>"><span></span>Sign in</a>
+      <% end %>
     </div>
   </div>
 </section>

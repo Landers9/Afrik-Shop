@@ -561,7 +561,8 @@ form .btn:focus{
 }
 
 .col-4 a img{
-  width: 100%;
+  width: 250px;
+  height: 300px;
 }
 
 .title{
@@ -854,6 +855,22 @@ th:last-child{
 }
 
 .valid{
+  padding:10px;
+  background:#4B3799;
+}
+
+.favory-add{
+  position: absolute;
+  margin-top: 5px;
+  width: 54px;
+  height: 17px;
+  align-items: center;
+  background-color: purple;
+  text-decoration:none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  border: none;
   padding:10px;
   background:#4B3799;
 }

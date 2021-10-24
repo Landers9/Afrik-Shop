@@ -10,4 +10,6 @@ class User < ApplicationRecord
   # has_many :cart_products, through: :carts, source: :product
   has_many :orders, dependent: :destroy
 
+  has_many :favories, dependent: :destroy
+
 end

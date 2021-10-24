@@ -8,15 +8,15 @@
 
 ## technology used (internal to the program)
 ***
-- devise for manage users table (sign up, login, remember password..)
-- AWS EC2 used to deploy the application in production
-- Bootstrap to design the appplication
-- gem rails_admin and gem cancancan for manage the Dashbord of admin and to limite the access of users not authorized
+- Devise for manage users table (sign up, login, remember password..)
+- Heroku used to deploy the application in production
+- Fonction Favorites to display the favorites products of users
+- Gem rails_admin and gem cancancan for manage the Dashbord of admin and to limite the access of users not authorized
 
 ## technology used (exteral to the program)
 ***
-- JavaScript Librairie as jquery, AOS, Anime.js (external to the program)
-(For anime.js and AOS I will use them for the animations on my different pages to make the user experience more enjoyable)
+- JavaScript Librairie as jquery (external to the program)
+(I will use them for the animations on my different pages to make the user experience more enjoyable)
 
 ## Execution procedure
 ***

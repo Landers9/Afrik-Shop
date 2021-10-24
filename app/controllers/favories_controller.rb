@@ -21,17 +21,8 @@ class FavoriesController < ApplicationController
 
   # POST /favories or /favories.json
   def create
-    @favory = Favory.new(favory_params)
-
-    respond_to do |format|
-      if @favory.save
-        format.html { redirect_to @favory, notice: "Favory was successfully created." }
-        format.json { render :show, status: :created, location: @favory }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @favory.errors, status: :unprocessable_entity }
-      end
-    end
+    favory = current_user.favories.create(product_id: params[:id], user_id: current_user.id)
+    redirect_to products_path()
   end
 
   # PATCH/PUT /favories/1 or /favories/1.json
@@ -49,11 +40,11 @@ class FavoriesController < ApplicationController
 
   # DELETE /favories/1 or /favories/1.json
   def destroy
-    @favory.destroy
-    respond_to do |format|
-      format.html { redirect_to favories_url, notice: "Favory was successfully destroyed." }
-      format.json { head :no_content }
+    @favory = current_user.favories.find_by(user_id: current_user.id, id: params[:id])
+    if @favory.present?
+      @favory.destroy
     end
+    redirect_to products_path()
   end
 
   private

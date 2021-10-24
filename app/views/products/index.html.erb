@@ -10,22 +10,32 @@
 
 <!-- my favories products -->
 
-<div class="favories">
-  <div class="small-container">
-    <h2 class="title">Favorites Products</h2>
-    <div class="row">
-      <% Favory.all.each do |f| %>
-        <div class="col-3">
+<div class="small-container" style="margin-top:30px;">
+  <h2 class="title" id="">Favorites Products</h2>
+  <div class="row">
+    <% @favories.each do |f| %>
+      <div class="col-4">
+        <a href="<%= product_path(f.product.id) %>">
           <img src="<%= f.product.image.url %>" alt="">
+        </a>
+        <h4><%= f.product.name %></h4>
+        <div class="rating">
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bx-star' ></i>
         </div>
-      <% end %>
-    </div>
+        <p><%= f.product.price %> $</p>
+        <a href="<%= delete_favory_path(id: f.id) %>" class="favory-add" style="background:red;">Delete</a>
+      </div>
+    <% end %>
   </div>
 </div>
 
 <!-- all products -->
 
-<div class="small-container">
+<div class="small-container" style="margin-top:30px;">
   <h2 class="title" id="products">All products</h2>
   <div class="row">
     <% @products.each do |p| %>
@@ -34,14 +44,8 @@
           <img src="<%= p.image.url %>" alt="">
         </a>
         <h4><%= p.name %></h4>
-        <div class="rating">
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bx-star' ></i>
-        </div>
-        <p><%= p.price %> $</p>
+        <p style="color:red;"><%= p.price %> $</p>
+        <a href="<%= add_favory_path(id: p.id) %>" class="favory-add">Favory</a>
       </div>
     <% end %>
   </div>
