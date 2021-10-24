@@ -9,7 +9,7 @@ html{
 
 #banner{
   /* background: linear-gradient(rgba(0, 0, 0, 0.3), purple), url('/assets/bg.jpg'); */
-  background: linear-gradient(rgba(0, 0, 0, 0.3), purple), url('bg.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.3), purple), url("https://res.cloudinary.com/dwl3u3tcy/image/upload/v1635038121/diveAppImage/bg_pkwghf.jpg");
   background-size: cover;
   height: 100vh;
 }
