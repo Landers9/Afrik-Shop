@@ -1,38 +1,22 @@
-<div class="small-container cart-page">
-    <h2 class="title">Ckeckout / Orders</h2>
-
-    <table>
-      <tr>
-        <th>id</th>
-        <th>Tel / Adress</th>
-        <th>Quantity and price</th>
-        <th>Status</th>
-        <th>Action</th>
-      </tr>
-      <% @orders.each do |o| %>
-        <tr>
-          <td>
-            <%= o.id %>
-          </td>
-          <td>
-            <%= o.user.telephone %> / <%= o.user.address %>
-          </td>
-          <td>
-            <%= o.qt_product %> / <%= o.total_price %>$
-          </td>
-          <td>
-            <% if o.status == "progress" %>
-              <p style="color:#FAC800"><%= o.status %></p>
-            <%else%>
-              <p style="color:#00FA00"><%= o.status %></p>
-            <%end%>
-          </td>
-          <td>
-            <%= link_to "Delete", delete_order_path(id: o.id), method: :delete%>
-          </td>
-        </tr>
-      <% end %>
-    </table>
+<div class="small-container" style="margin-top:30px;">
+  <h2 class="title" id="">Personnal Informations</h2>
+  <div class="row" style="display:inline-block;">
+    <p>
+      <strong style="color:purple;">Username: </strong> <%= @user.username %>
+    </p><br>
+    <p>
+      <strong style="color:purple;">Email: </strong> <%= @user.email %>
+    </p><br>
+    <p>
+      <strong style="color:purple;">Telephone: </strong> <%= @user.telephone %>
+    </p><br>
+    <p>
+      <strong style="color:purple;">Address: </strong> <%= @user.address %>
+    </p>
+  </div>
+  <div class="">
+    <a href="<%= edit_user_registration_path %>" class="profil-edit">Edit profil</a>
+  </div>
 </div>
 
 <section id="footer">

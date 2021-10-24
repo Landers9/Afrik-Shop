@@ -1,6 +1,6 @@
 <div class="account-page">
   <div class="container">
-    <div class="row">
+    <div class="row" style="padding:100px 0px;">
       <div class="col-2">
         <%= image_tag("shopLogin.png", :alt => "img", width:"83%") %>
         <!-- <img src="/assets/shopLogin.png" alt="" width="83%"> -->
@@ -17,7 +17,7 @@
             <%= render "devise/shared/error_messages", resource: resource %>
 
             <div class="field">
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email, class:"input", placeholder:"Password""%>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class:"input", placeholder:"Password"%>
             </div>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -36,14 +36,24 @@
               <%= f.password_field :current_password, autocomplete: "current-password", placeholder:"current password", class:"input"%>
             </div>
 
+            <div class="">
+              <%= f.text_field :address, placeholder: "Cotonou, Rue 12", autofocus: true, class:"input", placeholder:"Address"%>
+            </div>
+
+            <div class="">
+              <%= f.text_field :telephone, placeholder: "229 27262626", autofocus: true, class:"input", placeholder:"Phone number"%>
+            </div>
+
+            <div class="">
+              <%= f.text_field :username, autofocus: true, class:"input", placeholder:"Username"%>
+            </div>
+
             <div class="actions">
               <%= f.submit "Update", class:"btn input" %>
             </div>
           <% end %>
 
-          <h3>Cancel my account</h3>
-
-          <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+          <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn input" %> <br>
 
           <%= link_to "Back", :back %>
         </div>

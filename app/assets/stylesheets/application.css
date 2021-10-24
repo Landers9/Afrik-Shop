@@ -429,13 +429,13 @@ hr{
 
 .col-2 img{
   max-width: 100%;
-  padding: 50px 0;
+  padding: 50px 0px;
 }
 
 .col-2 h1{
   font-size: 50px;
   line-height: 60px;
-  margin: 25px 0;
+  margin: 25px 0px;
 }
 
 .form-container{
@@ -444,7 +444,7 @@ hr{
   height: auto;
   position: relative;
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 0px;
   margin: auto;
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.4);
 }
@@ -802,7 +802,7 @@ th{
 }
 
 td{
-  padding: 10px 5px;
+  padding: 5px 5px;
 }
 
 td input{
@@ -856,8 +856,37 @@ th:last-child{
 }
 
 .valid{
+  position: absolute;
   padding:10px;
   background:#4B3799;
+  width: 110px;
+  height: 31px;
+  padding-bottom: 10px;
+  align-items: center;
+  background-color: purple;
+  text-decoration:none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  border: none;
+}
+
+.profil-edit{
+  margin-top: 10px;
+  padding:10px;
+  background:#4B3799;
+  position: absolute;
+  padding:10px;
+  background:#4B3799;
+  width: 80px;
+  height: 15px;
+  align-items: center;
+  background-color: purple;
+  text-decoration:none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  border: none;
 }
 
 .favory-add{

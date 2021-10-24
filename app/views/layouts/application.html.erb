@@ -34,6 +34,7 @@
               <li><a href="<%= carts_path %>">Cart [<%= current_user.carts.count %>] </a></li>
             <%end%>
             <li><a href="<%= orders_path %>">Orders</a></li>
+            <li><a href="<%= user_path(current_user.id) %>">Profil</a></li>
             <li><%= button_to "Déconnexion", destroy_user_session_path, method: :delete, class:"btn-logout"%></li
           <% else %>
             <li><a href="#service">Our products</a></li>
