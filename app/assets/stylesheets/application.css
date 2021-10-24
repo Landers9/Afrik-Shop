@@ -524,7 +524,7 @@ form .btn:focus{
 /* page shop css */
 
 #banner-shop{
-  background: linear-gradient(rgba(0, 0, 0, 0.5), purple), url('/assets/p2.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), purple), url('https://res.cloudinary.com/dwl3u3tcy/image/upload/v1635079870/diveAppImage/p2_ilzdrv.jpg');
   background-size: cover;
   height: 100vh;
 }
