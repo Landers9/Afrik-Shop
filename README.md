@@ -9,9 +9,7 @@
 ## technology used (internal to the program)
 ***
 - Devise for manage users table (sign up, login, remember password..)
-- Heroku used to deploy the application in production
 - Fonction Favorites to display the favorites products of users
-- Gem rails_admin and gem cancancan for manage the Dashbord of admin and to limite the access of users not authorized
 
 ## technology used (exteral to the program)
 ***
