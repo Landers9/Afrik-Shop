@@ -59,7 +59,11 @@
      </table>
    </div>
 
-   <a href="<%= add_order_path %>", class="btn-update valid">Validate</a>
+   <% if @total > 20 %>
+     <a href="<%= add_order_path(indice: @total) %>", class="btn-update valid">Validate</a>
+   <% else %>
+     <p style="color:red;">Clique to update</p>
+   <% end %>
 
 </div>
 

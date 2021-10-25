@@ -41,9 +41,14 @@ class OrdersController < ApplicationController
       @cmde.save
     end
 
-    d = commands.delete_all
+    if @order.total_price > 20
+      redirect_to orders_path
 
-    redirect_to orders_path
+    else
+      redirect_to carts_path
+    end
+
+    d = commands.delete_all
   end
 
   # PATCH/PUT /orders/1 or /orders/1.json
