@@ -3,7 +3,6 @@
     <div class="row">
       <div class="col-2">
         <%= image_tag("shopLogin2.png", :alt => "img", width:"83%") %>
-        <!-- <img src="/assets/shopLogin2.png" alt="" width="83%"> -->
       </div>
 
       <div class="col-2">
@@ -35,7 +34,35 @@
          <% end %>
 
          <%= render "devise/shared/links"%>
+         <br>
+
+         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |g| %>
+            <div class="actions">
+              <%= g.hidden_field :email, value: "guest@example.com" %>
+            </div>
+            <div class="actions">
+              <%= g.hidden_field :password, value: "azerty" %>
+            </div>
+            <div class="">
+              <%= g.submit "Guest login", class: "btn input" %>
+            </div>
+         <% end %>
+
+         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |g| %>
+            <div class="actions">
+              <%= g.hidden_field :email, value: "guestadmin@example.com" %>
+            </div>
+            <div class="actions">
+              <%= g.hidden_field :password, value: "azerty" %>
+            </div>
+            <div class="">
+              <%= g.submit "Guest login Admin", class: "btn input" %>
+            </div>
+         <% end %>
+
         </div>
+
+
       </div>
     </div>
   </div>
