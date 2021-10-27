@@ -13,6 +13,13 @@
           </div>
 
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+            <% if flash.alert %>
+              <div id="error_explanation">
+                <p style="color:red;"><%= flash.alert %></p>
+              </div>
+            <% end %>
+
             <div class="">
               <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class:"input"%>
             </div>
