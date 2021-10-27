@@ -12,7 +12,7 @@ User.create!(username: 'Guest User Admin', email: 'guestadmin@example.com', pass
 (1..5).each do |x|
   Product.create!(name: "T-shirt Red Guici-#{x}", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", category_id: Random.rand(1..5), price: Random.rand(30..115), image: File.open(File.join(Rails.root, "/app/assets/images/product-2.jpg")))
   Favory.create!(product_id: Product.last.id, user_id: User.last.id)
-  Card.create(product_id: Product.last.id, user_id: User.last.id, quantity: Random.rand(1..2), total_price: Random.rand(30..115))
+  Cart.create(product_id: Product.last.id, user_id: User.last.id, quantity: Random.rand(1..2), total_price: Random.rand(30..115))
   Order.create(user_id: User.last.id, qt_product: Random.rand(1..2), total_price: Random.rand(30..115))
   OrdersProduct.create(order_id: Order.last.id, product_id: Product.last.id)
 end
