@@ -35,7 +35,7 @@
             <%end%>
             <li><a href="<%= orders_path %>">Orders</a></li>
             <li><a href="<%= user_path(current_user.id) %>">Profil</a></li>
-            <li><%= button_to "Déconnexion", destroy_user_session_path, method: :delete, class:"btn-logout"%></li
+            <li><%= button_to "logout", destroy_user_session_path, method: :delete, class:"btn-logout"%></li
           <% else %>
             <li><a href="#service">Our products</a></li>
             <li><%= link_to "Sign up", new_user_registration_path %></li>
@@ -45,15 +45,26 @@
       </nav>
     </div>
 
-    <div id="menuBtn">
+    <button type="button" id="menuBtn" name="menu">
       <i class='bx bx-menu bx-md'></i>
-    </div>
+    </button>
+
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit(){
+        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,es,fr,ar,de,el,iw,ja', autodisplay:false}, "google_translate_element");
+      }
+    </script>
 
     <script type="text/javascript">
       var sideNav = document.getElementById('sideNav');
 
-      sideNav.style.right == "-250px"
-      
+      // sideNav.style.right = "0px"; //Pour les tests de deconnection décochez la ligne courante et commentez toute celles du dessous
+
       $("#menuBtn").click(function(){
         if(sideNav.style.right == "-250px"){
           sideNav.style.right = "0";
@@ -63,6 +74,8 @@
         }
       });
     </script>
+
+
 
   </body>
 </html>

@@ -42,7 +42,7 @@ class OrdersController < ApplicationController
     end
 
     if @order.total_price > 20
-      redirect_to orders_path
+      redirect_to "/checkout"
 
     else
       redirect_to carts_path
