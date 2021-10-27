@@ -32,6 +32,29 @@ RSpec.describe 'User function', type: :system do
         )
     end
 
+  describe 'See user profil' do
+    context 'See user profil' do
+      it "See user profil" do
+
+        visit new_user_session_path
+
+        fill_in "user[email]",	with: @admin.email
+        fill_in "user[password]",	with: @admin.password
+        click_on "Log in"
+
+        expect(page).to have_text 'Welcome to AfrikShop'
+
+        click_button "menu"
+
+        click_button "menu"
+
+        click_on "Profil"
+
+        expect(page).to have_text 'Personnal Informations'
+      end
+    end
+  end
+
   describe 'registration of user test' do
     context 'registration of user test' do
       it 'registration of user test' do
@@ -231,31 +254,7 @@ RSpec.describe 'User function', type: :system do
 
         click_on "Validate"
 
-        expect(page).to have_text '70$'
-        expect(page).to have_text "22967222311"
-      end
-    end
-  end
-
-  describe 'See user profil' do
-    context 'See user profil' do
-      it "See user profil" do
-
-        visit new_user_session_path
-
-        fill_in "user[email]",	with: @admin.email
-        fill_in "user[password]",	with: @admin.password
-        click_on "Log in"
-
-        expect(page).to have_text 'Welcome to AfrikShop'
-
-        click_button "menu"
-
-        click_button "menu"
-
-        click_on "Profil"
-
-        expect(page).to have_text 'Edit'
+        expect(page).to have_text 'Purchase Completed'
       end
     end
   end
