@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'Category model validation', type: :model do
+    describe 'Validation test' do
+      context 'If the name category is empty' do
+        it 'Error' do
+        cart = FactoryBot.build(:category, name:"")
+          expect(cart).not_to be_valid
+        end
+      end
+    end
+  end
 end
